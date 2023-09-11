@@ -15,7 +15,6 @@ exports.register = asyncHandler(async (req, res, next) => {
   }
 
   const userExists = await User.findOne({ username: username });
-  console.log(userExists);
   if (userExists) {
     return res.status(400).json({ message: "Username taken" });
   }

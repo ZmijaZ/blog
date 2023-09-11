@@ -6,3 +6,5 @@ mongoose
 express-async-handler
 
 bcryptjs, jsonwebtoken
+
+concurrently
