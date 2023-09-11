@@ -1,9 +1,11 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+const userController = require("../controllers/userController");
+const { protect } = require("./authMiddleware");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// localhost:x000/api/users
+router.post("/register", userController.register);
+router.post("/login", userController.login);
+router.get("/me", protect, userController.getMe);
 
 module.exports = router;
